@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M.A.P | Data Analytics & Quantitative Marketing</title>
+<meta name="description" content="Quantitative Rigor × Creative Direction — Personal portfolio of M.A.P, MSc Business Mathematics bridging mathematical precision with marketing analytics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#FFFFFF;
+  --alabaster:#F9F9FB;
+  --alabaster-2:#F2F2F5;
+  --ink:#111111;
+  --ink-2:#1A1E2B;
+  --midnight:#0B132B;
+  --midnight-2:#0E1626;
+  --burgundy:#580C1E;
+  --burgundy-2:#6B0F24;
+  --burgundy-light:#FFF0F3;
+  --line:#EAE9EE;
+  --line-strong:#DDDD E6;
+  --muted:#6B7280;
+  --muted-2:#9AA0AF;
+  --max:1160px;
+  --serif:'Cormorant Garamond', serif;
+  --sans:'Inter', system-ui, sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  background:var(--white);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+img{display:block;max-width:100%}
+.serif{font-family:var(--serif)}
+.mono{font-family:'JetBrains Mono',monospace}
+
+/* HEADER */
+.header{
+  position:sticky;top:0;z-index:40;
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(12px) saturate(1.1);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:var(--max);margin:0 auto;
+  padding:18px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.brand{line-height:1}
+.brand-mark{
+  font-family:var(--serif);
+  font-size:16px;letter-spacing:0.18em;font-weight:600;color:var(--ink);
+}
+.brand-mark span{font-weight:300;opacity:0.45}
+.brand-sub{
+  margin-top:4px;
+  font-size:9.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);font-weight:600;
+}
+.nav{
+  display:flex;align-items:center;gap:22px;
+}
+.nav a{
+  font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--muted);font-weight:600;position:relative;padding:4px 0;transition:.2s;
+}
+.nav a::after{
+  content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--midnight);transition:.25s;
+}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after{width:100%}
+.nav-cta{
+  padding:9px 16px;border-radius:999px;
+  border:1px solid var(--midnight);background:var(--midnight);color:#fff;
+  font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;cursor:pointer;transition:.2s;
+}
+.nav-cta:hover{background:var(--burgundy);border-color:var(--burgundy)}
+.hamburger{display:none;background:none;border:0;font-size:22px;cursor:pointer;color:var(--ink)}
+
+/* HERO */
+.hero{
+  max-width:var(--max);margin:0 auto;
+  padding:64px 24px 0;
+  display:grid;grid-template-columns:1.08fr 0.92fr;gap:48px;align-items:start;
+}
+.hero h1{
+  font-family:var(--serif);
+  font-weight:300;
+  font-size:clamp(38px,5.2vw,66px);
+  line-height:0.92;letter-spacing:-0.04em;color:var(--ink);
+}
+.hero h1 em{
+  font-style:italic;font-weight:400;
+  background:linear-gradient(90deg, var(--midnight), var(--burgundy-2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero h1 .break{display:block}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--burgundy);font-weight:700;
+  margin-bottom:18px;
+}
+.eyebrow::before{content:"";width:18px;height:1px;background:var(--burgundy)}
+.hero-copy{
+  padding-top:8px;
+}
+.hero-copy p{
+  font-size:15px;line-height:1.85;color:#2B2F3A;max-width:520px;
+}
+.hero-copy p + p{margin-top:14px;color:var(--muted);font-size:13.5px}
+.divider{height:1px;background:var(--line);margin:28px 0}
+
+/* STAT BAR */
+.stat-bar{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  background:var(--white);
+}
+.stat{
+  padding:18px 18px 16px;text-align:left;position:relative;
+}
+.stat + .stat{border-left:1px solid var(--line)}
+.stat b{
+  display:block;font-family:var(--serif);font-weight:600;
+  font-size:30px;letter-spacing:-0.04em;line-height:1;color:var(--midnight);
+}
+.stat b span{color:var(--burgundy)}
+.stat label{
+  display:block;margin-top:6px;
+  font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);font-weight:700;line-height:1.4;
+}
+.stat small{
+  display:block;margin-top:4px;font-size:11px;color:var(--muted-2);
+}
+.hero-note{
+  margin-top:12px;display:flex;gap:8px;align-items:center;
+  font-size:11px;letter-spacing:0.06em;color:var(--muted);
+}
+.hero-note i{width:6px;height:6px;border-radius:50%;background:var(--burgundy);display:inline-block}
+
+/* SELECTED WORK */
+.section{
+  max-width:var(--max);margin:0 auto;padding:64px 24px;
+}
+.section-header{
+  display:flex;align-items:end;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  margin-bottom:32px;padding-bottom:18px;border-bottom:1px solid var(--line);
+}
+.section-header h2{
+  font-family:var(--serif);font-size:38px;font-weight:300;letter-spacing:-0.03em;line-height:1;
+}
+.section-header h2 em{font-style:italic;font-weight:500;color:var(--midnight)}
+.section-header p{
+  max-width:420px;color:var(--muted);font-size:13px;line-height:1.7;
+}
+.kicker{
+  font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--burgundy);font-weight:800;margin-bottom:8px;
+}
+.work-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+}
+.card{
+  background:var(--white);
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  display:flex;flex-direction:column;cursor:pointer;transition:.28s;
+}
+.card:hover{border-color:#D8D7DE;transform:translateY(-3px);box-shadow:0 18px 40px rgba(11,19,43,0.08)}
+.card-thumb{
+  height:220px;background:var(--alabaster);position:relative;overflow:hidden;
+  border-bottom:1px solid var(--line);
+}
+.card-thumb img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.card:hover .card-thumb img{transform:scale(1.04)}
+.card-badge{
+  position:absolute;top:12px;left:12px;
+  font-size:9px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800;
+  padding:6px 9px;border-radius:999px;
+  background:var(--white);border:1px solid var(--line);color:var(--midnight);
+}
+.card-badge.burg{border-color:rgba(88,12,30,0.18);color:var(--burgundy);background:var(--burgundy-light)}
+.card-arrow{
+  position:absolute;bottom:12px;right:12px;width:32px;height:32px;border-radius:50%;
+  display:grid;place-items:center;background:var(--midnight);color:#fff;font-size:12px;transition:.2s;
+}
+.card:hover .card-arrow{background:var(--burgundy);transform:rotate(45deg)}
+.card-body{padding:18px 16px 16px;flex:1;display:flex;flex-direction:column;gap:10px}
+.card-body h3{font-family:var(--serif);font-size:20px;line-height:1.15;font-weight:600;letter-spacing:-0.02em;color:var(--ink)}
+.card-body .subtitle{font-size:12.5px;line-height:1.55;color:var(--muted);font-style:italic;min-height:38px}
+.card-overview{font-size:12.5px;line-height:1.65;color:#2B2F3A;border-top:1px solid var(--line);padding-top:12px;margin-top:2px}
+.card-metrics{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.mini-pill{
+  font-size:10px;letter-spacing:0.06em;font-weight:700;
+  padding:6px 8px;border-radius:999px;
+  border:1px solid var(--line);background:var(--alabaster);color:var(--midnight);
+}
+.mini-pill.burg{border-color:rgba(88,12,30,0.2);background:var(--burgundy-light);color:var(--burgundy)}
+.card-foot{
+  margin-top:auto;padding-top:12px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.card-foot span{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.card-foot b{font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--midnight)}
+
+/* BACKGROUND & EXPERTISE */
+.bg-section{
+  background:var(--alabaster);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.bg-grid{
+  max-width:var(--max);margin:0 auto;padding:56px 24px;
+  display:grid;grid-template-columns:1.05fr 0.95fr;gap:40px;
+}
+.bio h3{font-family:var(--serif);font-size:30px;font-weight:400;line-height:1.1;letter-spacing:-0.03em;margin-bottom:14px}
+.bio h3 em{font-style:italic;color:var(--midnight);font-weight:500}
+.bio p{font-size:13.8px;line-height:1.85;color:#2B2F3A}
+.bio p + p{margin-top:12px}
+.edu{
+  margin-top:18px;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--white);
+  display:flex;gap:12px;align-items:start;
+}
+.edu i{width:28px;height:28px;border-radius:8px;display:grid;place-items:center;background:var(--midnight);color:#fff;font-size:12px;flex:0 0 28px}
+.edu b{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;display:block}
+.edu span{font-size:12px;color:var(--muted);display:block;margin-top:2px}
+.skills{
+  background:var(--white);border:1px solid var(--line);border-radius:16px;padding:20px;
+}
+.skills h4{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);font-weight:800;margin-bottom:14px}
+.skill-group{margin-bottom:16px}
+.skill-group:last-child{margin-bottom:0}
+.skill-group label{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--burgundy);font-weight:800;display:block;margin-bottom:8px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{
+  font-size:11px;letter-spacing:0.06em;font-weight:600;
+  padding:8px 11px;border-radius:999px;
+  background:var(--white);border:1px solid var(--line);color:var(--midnight);transition:.2s;
+}
+.tag:hover{border-color:var(--midnight);background:var(--midnight);color:#fff}
+.tag.burg{border-color:rgba(88,12,30,0.18);background:var(--burgundy-light);color:var(--burgundy)}
+.tag.burg:hover{background:var(--burgundy);color:#fff;border-color:var(--burgundy)}
+
+/* CONTACT */
+.contact-box{
+  border:1px solid var(--line);border-radius:16px;padding:22px;
+  background:var(--white);display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;
+}
+.contact-box h3{font-family:var(--serif);font-size:22px;font-weight:600;letter-spacing:-0.02em}
+.contact-box p{font-size:13px;color:var(--muted);margin-top:4px}
+.contact-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn-dark{
+  padding:12px 18px;border-radius:999px;background:var(--midnight);color:#fff;border:1px solid var(--midnight);
+  font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:800;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-dark:hover{background:var(--burgundy);border-color:var(--burgundy)}
+.btn-light{
+  padding:12px 18px;border-radius:999px;background:var(--white);color:var(--midnight);border:1px solid var(--line);
+  font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:800;cursor:pointer;transition:.2s;
+}
+.btn-light:hover{border-color:var(--midnight)}
+
+/* MODAL */
+.modal{
+  position:fixed;inset:0;z-index:60;display:none;
+  background:rgba(11,19,43,0.42);backdrop-filter:blur(8px);padding:18px;
+  align-items:center;justify-content:center;
+}
+.modal.open{display:flex}
+.modal-panel{
+  width:min(1080px,100%);max-height:94vh;overflow:auto;
+  background:var(--white);border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 30px 80px rgba(11,19,43,0.18);
+}
+.modal-top{
+  position:sticky;top:0;z-index:2;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px 16px;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.modal-top h3{font-family:var(--serif);font-size:18px;font-weight:600;letter-spacing:-0.02em}
+.modal-close{
+  width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+  background:var(--white);border:1px solid var(--line);cursor:pointer;transition:.2s;
+}
+.modal-close:hover{background:var(--midnight);color:#fff;border-color:var(--midnight)}
+.slider{
+  position:relative;background:var(--alabaster);border-bottom:1px solid var(--line);
+  display:flex;flex-direction:column;
+}
+.slide-stage{
+  height:clamp(320px, 62vh, 560px);
+  max-height:66vh;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;background:var(--alabaster);position:relative;
+  width:100%;padding:10px;
+  aspect-ratio:16/9;
+}
+.slide-stage img{
+  max-width:100%;max-height:100%;
+  width:auto;height:auto;
+  object-fit:contain;object-position:center;
+  background:var(--alabaster);display:block;
+  box-shadow:0 4px 20px rgba(11,19,43,0.08);border-radius:6px;
+}
+.slide-counter{
+  position:absolute;bottom:12px;left:50%;transform:translateX(-50%);
+  font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:700;
+  padding:6px 10px;border-radius:999px;background:var(--white);border:1px solid var(--line);color:var(--midnight);
+}
+.arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  background:var(--white);border:1px solid var(--line);cursor:pointer;
+  box-shadow:0 8px 20px rgba(11,19,43,0.08);transition:.2s;font-size:16px;
+}
+.arrow:hover{background:var(--midnight);color:#fff;border-color:var(--midnight)}
+.arrow.prev{left:12px}
+.arrow.next{right:12px}
+.thumbs{
+  display:flex;gap:8px;padding:12px 16px;overflow:auto;background:var(--white);border-top:1px solid var(--line);
+}
+.thumbs img{
+  width:86px;height:64px;object-fit:cover;border-radius:8px;border:2px solid transparent;cursor:pointer;opacity:0.7;transition:.2s;flex:0 0 auto;
+}
+.thumbs img.active{border-color:var(--midnight);opacity:1}
+.slide-stage video{
+  max-width:100%;max-height:100%;
+  width:auto;height:auto;
+  display:none;background:var(--dark-bg);
+  border-radius:6px;box-shadow:0 4px 20px rgba(11,19,43,0.25);
+}
+.thumb-video{position:relative;flex:0 0 auto}
+.thumb-video img{width:86px;height:64px;object-fit:cover;border-radius:8px;border:2px solid rgba(255,77,109,0.55);cursor:pointer;opacity:0.7;transition:.2s}
+.thumb-video img.active{border-color:var(--electric);opacity:1}
+.thumb-play{
+  position:absolute;top:4px;left:4px;width:16px;height:16px;border-radius:50%;
+  display:grid;place-items:center;font-size:7px;color:#fff;background:var(--electric);
+  pointer-events:none;z-index:1;
+}
+.modal-body{padding:20px}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.kpi{
+  border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--alabaster);
+}
+.kpi label{font-size:9px;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);font-weight:800;display:block}
+.kpi strong{font-family:var(--serif);font-size:18px;display:block;margin-top:4px;color:var(--midnight)}
+.kpi span{font-size:11px;color:var(--muted)}
+.modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.modal-card{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--white)}
+.modal-card h4{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--burgundy);font-weight:800;margin-bottom:6px}
+.modal-card p{font-size:13px;line-height:1.7;color:#2B2F3A}
+.path-note{
+  margin-top:10px;padding:10px 12px;border-radius:10px;
+  background:var(--alabaster);border:1px dashed var(--line);
+  font-size:11px;color:var(--muted);line-height:1.6;
+}
+.path-note code{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--midnight)}
+
+/* FLOATING EDIT */
+.edit-toggle{
+  position:fixed;right:16px;bottom:16px;z-index:55;
+  display:flex;align-items:center;gap:8px;
+  padding:11px 14px;border-radius:999px;
+  background:var(--midnight);color:#fff;border:1px solid var(--midnight);
+  font-size:11px;letter-spacing:0.12em;text-transform:uppercase;font-weight:800;cursor:pointer;
+  box-shadow:0 12px 30px rgba(11,19,43,0.22);
+}
+.edit-toggle.active{background:var(--burgundy);border-color:var(--burgundy)}
+.edit-panel{
+  position:fixed;right:16px;bottom:62px;z-index:55;width:min(380px, calc(100vw - 24px));
+  background:var(--white);border:1px solid var(--line);border-radius:16px;
+  box-shadow:0 20px 60px rgba(11,19,43,0.16);padding:14px;display:none;max-height:76vh;overflow:auto;
+}
+.edit-panel.open{display:block}
+.edit-panel h4{font-size:11px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.edit-panel label{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);font-weight:700;display:block;margin:10px 0 6px}
+.edit-panel input, .edit-panel textarea{
+  width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--alabaster);font-size:12px;outline:none;
+}
+.edit-panel input:focus, .edit-panel textarea:focus{border-color:var(--midnight);background:var(--white)}
+.edit-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.edit-actions button, .edit-panel .full{
+  padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--white);font-size:11px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;cursor:pointer;
+}
+.edit-actions button:hover, .edit-panel .full:hover{border-color:var(--midnight)}
+.edit-hint{font-size:11px;color:var(--muted);line-height:1.5;margin-top:8px;padding:10px;border-radius:10px;background:var(--burgundy-light);border:1px solid rgba(88,12,30,0.12)}
+.admin-mode .editable{outline:1px dashed rgba(88,12,30,0.35);outline-offset:3px;border-radius:4px}
+.edit-badge{display:none;position:absolute;top:-8px;right:-6px;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:3px 6px;border-radius:999px;background:var(--burgundy);color:#fff;font-weight:800}
+.admin-mode .editable{position:relative}
+.admin-mode .edit-badge{display:inline-block}
+
+footer{
+  max-width:var(--max);margin:0 auto;padding:18px 24px 90px;
+  border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  font-size:11px;color:var(--muted);letter-spacing:0.06em;
+}
+
+/* JUST CAVALLI — DARK ARCHIVE THEME */
+:root{
+  --dark-bg:#0A0A0A;
+  --dark-bg-2:#10141A;
+  --dark-line:rgba(255,255,255,0.10);
+  --electric:#6B0F24;
+  --electric-2:#FF4D6D;
+}
+.card.dark{
+  background:var(--dark-bg);
+  border:1px solid var(--dark-line);
+  color:var(--white);
+}
+.card.dark.featured{grid-column:1 / -1}
+.card.dark.featured .card-thumb{height:clamp(240px, 34vw, 400px)}
+.card.dark:hover{border-color:rgba(255,77,109,0.6);box-shadow:0 22px 60px rgba(0,0,0,0.55)}
+.card.dark .card-thumb{background:var(--dark-bg-2);border-bottom:1px solid var(--dark-line)}
+.card-thumb video{width:100%;height:100%;object-fit:cover;display:block}
+.video-tag{
+  position:absolute;top:12px;right:12px;display:flex;align-items:center;gap:6px;
+  font-size:9px;letter-spacing:0.16em;text-transform:uppercase;font-weight:800;
+  padding:6px 10px;border-radius:999px;
+  background:rgba(10,10,10,0.88);border:1px solid rgba(255,77,109,0.55);color:var(--electric-2);
+  backdrop-filter:blur(6px);
+}
+.video-tag::before{content:"▶";font-size:8px}
+.card.dark .card-badge{background:rgba(10,10,10,0.88);border-color:rgba(255,77,109,0.5);color:var(--electric-2)}
+.card.dark .card-arrow{background:var(--electric);color:#fff}
+.card.dark:hover .card-arrow{background:var(--electric-2)}
+.card.dark .card-body h3{color:var(--white)}
+.card.dark .card-body .subtitle{color:#98A2B3;font-style:italic}
+.card.dark .card-overview{color:#C7CDD6;border-top:1px solid var(--dark-line)}
+.card.dark .card-metrics .mini-pill{background:#141920;border:1px solid var(--dark-line);color:#D6DBE2}
+.card.dark .card-metrics .mini-pill.burg{border-color:rgba(255,77,109,0.55);background:rgba(107,15,36,0.18);color:var(--electric-2)}
+.card.dark .card-foot{border-top:1px solid var(--dark-line)}
+.card.dark .card-foot span{color:#7A8494}
+.card.dark .card-foot b{color:var(--electric-2)}
+.video-showcase{
+  position:relative;overflow:hidden;border-radius:14px;margin-bottom:16px;
+  background:var(--dark-bg);border:1px solid var(--dark-line);
+}
+.video-showcase video{width:100%;display:block;max-height:420px;object-fit:cover;aspect-ratio:16/9;background:var(--dark-bg)}
+.video-showcase-caption{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:36px 18px 14px;
+  background:linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(10,10,10,0.94) 100%);
+  display:flex;flex-direction:column;align-items:flex-start;gap:3px;
+}
+.video-showcase-caption .vs-sub{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--electric-2);font-weight:800}
+.video-showcase-caption .vs-title{font-family:var(--serif);font-size:22px;color:#fff;letter-spacing:-0.02em}
+
+/* responsive */
+@media (max-width: 960px){
+  .hero{grid-template-columns:1fr;gap:24px}
+  .work-grid{grid-template-columns:1fr 1fr}
+  .bg-grid{grid-template-columns:1fr}
+  .kpi-row{grid-template-columns:1fr 1fr}
+  .modal-grid{grid-template-columns:1fr}
+  .slide-stage{height:clamp(280px, 52vh, 420px);aspect-ratio:16/9}
+}
+@media (max-width: 640px){
+  .header-inner{padding:14px 16px}
+  .nav{display:none}
+  .nav.open{display:flex;position:absolute;top:62px;left:12px;right:12px;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:14px;gap:14px;box-shadow:0 12px 30px rgba(11,19,43,0.1)}
+  .hamburger{display:block}
+  .section, .bg-grid{padding-left:16px;padding-right:16px}
+  .hero{padding:32px 16px 0}
+  .work-grid{grid-template-columns:1fr}
+  .stat-bar{grid-template-columns:1fr}
+  .stat + .stat{border-left:0;border-top:1px solid var(--line)}
+  .contact-box{grid-template-columns:1fr}
+  .slide-stage{height:clamp(220px, 48vh, 300px);max-height:52vh;aspect-ratio:16/9}
+  .kpi-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-mark editable" data-edit-key="brand">M.A.P <span>|</span> Data Analytics & Quantitative Marketing</div>
+      <div class="brand-sub editable" data-edit-key="brand-sub">BSc Mathematics (NKUA) · MSc Student in Business Mathematics (NKUA / AUEB)</div>
+    </div>
+    <nav class="nav" id="nav">
+      <a href="#work">Selected Work</a>
+      <a href="#background">Background / Math & Strategy</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div>
+    <div class="eyebrow">Personal Portfolio — MSc Business Mathematics</div>
+    <h1 class="serif editable" data-edit-key="hero-title">
+      <span class="break">Mathematical</span>
+      <span class="break"><em>precision</em> —</span>
+      <span class="break">directed as</span>
+      <span class="break"><em>creative vision.</em></span>
+    </h1>
+  </div>
+  <div class="hero-copy">
+    <p class="editable" data-edit-key="hero-p1">I bridge <strong>mathematical precision</strong>, <strong>machine learning analytics</strong>, and <strong>high-end creative direction</strong> to turn market data into visually compelling, profitable brand strategies.</p>
+    <p class="editable" data-edit-key="hero-p2">MSc Student in Business Mathematics (NKUA / AUEB) with a BSc in Mathematics. Specialized in Creative Marketing, AI video/image production, Customer Lifetime Value (CLV), and luxury e-commerce unit economics.</p>
+    <div class="divider"></div>
+    <div class="stat-bar">
+      <div class="stat">
+        <b>805K<span>+</span></b>
+        <label>Transactions Analyzed</label>
+        <small>£17.74M revenue mapped</small>
+      </div>
+      <div class="stat">
+        <b>78<span>%</span></b>
+        <label>Max Fashion Margin Model</label>
+        <small>Leather 70% · Inox 75% · Pants 78%</small>
+      </div>
+      <div class="stat">
+        <b>12.1<span>x</span></b>
+        <label>Average Expected ROI</label>
+        <small>Filtered decision engine</small>
+      </div>
+    </div>
+    <div class="hero-note"><i></i> Personal Portfolio — Data Analytics & Marketing Case Studies</div>
+  </div>
+</section>
+
+<!-- SELECTED WORK -->
+<section class="section" id="work">
+  <div class="section-header">
+    <div>
+      <div class="kicker">Selected Work — 04 Case Studies</div>
+      <h2 class="serif">Work that <em>ships decisions,</em> not decks.</h2>
+    </div>
+    <p>A portfolio showcase comprising 1 end-to-end data analytics model, 2 e-commerce brand concepts, and 1 speculative luxury marketing strategy. Click any card to open the full-screen presentation. Drop your exported JPGs into the <span class="mono" style="color:var(--midnight);font-weight:700">assets/projects/…</span> folders — the slider reads them automatically.</p>
+  </div>
+  <div class="work-grid" id="workGrid"></div>
+</section>
+
+<!-- BACKGROUND -->
+<div class="bg-section" id="background">
+  <div class="bg-grid">
+    <div class="bio">
+      <div class="kicker">Background / Math & Strategy</div>
+      <h3 class="serif editable" data-edit-key="bio-title">Where <em>mathematical proof</em> meets creative identity.</h3>
+      <p class="editable" data-edit-key="bio-p1">My work operates at the intersection of statistical learning, aesthetic direction, and brand architecture — transforming transactional data into high-converting visual narratives.</p>
+      <p class="editable" data-edit-key="bio-p2">Core focus: Creative Strategy, AI Content Systems, RFM Segmentation, CLV Modeling, and E-Commerce Unit Economics (70–78% margins).</p>
+      <div class="edu">
+        <i>∑</i>
+        <div>
+          <b>National & Kapodistrian University of Athens — MSc Financial Mathematics</b>
+          <span>Quantitative finance · Stochastic modeling · Machine learning · Econometrics</span>
+        </div>
+      </div>
+      <div class="edu" style="margin-top:10px">
+        <i>◈</i>
+        <div>
+          <b>Practice — Marketing Strategy & Creative Direction</b>
+          <span>Decision engines, luxury unit economics (70–78% margins, ROAS 3.5×+), and content funnel architecture.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills">
+      <h4>Expertise — Clean Stack</h4>
+      <div class="skill-group">
+        <label>Creative</label>
+        <div class="tags">
+          <span class="tag burg">Creative Direction</span><span class="tag">Visual Identity</span><span class="tag">AI Video Generation</span><span class="tag">Brand Architecture</span><span class="tag">Content Funnels</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <label>Quantitative</label>
+        <div class="tags">
+          <span class="tag burg">Quantitative Marketing</span><span class="tag">Mathematical Modeling</span><span class="tag">RFM & K-Means</span><span class="tag">Python/ML</span><span class="tag">SQL</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <label>Strategy</label>
+        <div class="tags">
+          <span class="tag burg">AI Digital Marketing</span><span class="tag">Unit Economics</span><span class="tag">ROAS Optimization</span><span class="tag">SEO</span>
+        </div>
+      </div>
+      <div class="path-note" style="margin-top:16px">
+        All case studies are personal portfolio work — not client-service listings. For the full maths, open <strong>AI Marketing Strategy Engine</strong>.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="kicker">Contact & Direct Links</div>
+  <div class="contact-box">
+    <div>
+      <h3 class="serif">Malamati Athina Polyzogopoulou</h3>
+      <p class="editable" data-edit-key="contact-p">Business Mathematics MSc Student · Data & Marketing Analytics</p>
+    </div>
+    <div class="contact-actions">
+      <a class="btn-dark" href="mailto:malpolyzo@gmail.com">Email — malpolyzo@gmail.com →</a>
+      <a class="btn-light" href="https://www.linkedin.com/in/malthina-polizogopoulou-030043356/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Malamati Athina Polyzogopoulou — Data & Marketing Analytics · Athens</span>
+  <span class="mono">Built single-file · #0B132B × #580C1E · Editorial minimal</span>
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="if(event.target===this) closeModal()">
+  <div class="modal-panel" id="modalPanel"></div>
+</div>
+
+<!-- LIVE EDIT TOGGLE -->
+<button class="edit-toggle" id="editToggle" onclick="toggleEdit()">◐ Live Edit</button>
+<div class="edit-panel" id="editPanel">
+  <h4><span>Live Edit / Local Storage</span><button onclick="toggleEdit()" style="background:none;border:0;cursor:pointer;font-size:16px">✕</button></h4>
+  <div class="edit-hint">Enable to click any <b>underlined text</b> and edit inline. Changes save to <span class="mono">localStorage</span>. Update image paths below to point to your local slides.</div>
+  <label>Quick actions</label>
+  <div class="edit-actions">
+    <button onclick="exportJSON()">Export JSON ⤓</button>
+    <button onclick="resetEdits()" style="color:var(--burgundy);border-color:rgba(88,12,30,0.2)">Reset</button>
+  </div>
+  <div id="imagePathEditors"></div>
+  <label>Add custom slide (Data URL upload)</label>
+  <div style="display:flex;gap:8px">
+    <select id="uploadProject" style="flex:1;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--alabaster)">
+      <option value="analytics-engine">Analytics Engine</option>
+      <option value="lumen">LUMEN</option>
+      <option value="greenvibes">GreenVibes</option>
+      <option value="just-cavalli">Just Cavalli — Archive Rebirth</option>
+    </select>
+    <input type="file" id="uploadFile" accept="image/*" style="flex:1">
+  </div>
+  <button class="full" onclick="handleUpload()" style="margin-top:8px">Upload to Gallery</button>
+</div>
+
+<!-- INLINE EDIT MODAL -->
+<div class="modal" id="inlineModal" onclick="if(event.target===this) closeInline()">
+  <div class="modal-panel" style="max-width:560px;padding:16px;background:var(--white)">
+    <h4 class="serif" style="font-size:16px;margin-bottom:10px">Edit text</h4>
+    <textarea id="inlineTextarea" style="width:100%;min-height:110px;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--alabaster);font-size:13px;outline:none"></textarea>
+    <div style="display:flex;gap:8px;justify-content:end;margin-top:10px">
+      <button class="btn-light" onclick="closeInline()">Cancel</button>
+      <button class="btn-dark" onclick="saveInline()">Save</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const PROJECTS = [
+  {
+    id:'analytics-engine',
+    badge:'Predictive Analytics & ML Engine (Real Data Science Project)',
+    title:'AI Marketing Strategy Engine',
+    subtitle:'How 805,549 transactions become 5,878 automated marketing decisions.',
+    thumb:'assets/projects/analytics-engine/slide-1.jpg',
+    originalFile:'assets/projects/analytics-engine/AI_Marketing_Strategy_Engine_FINAL_EN.pptx',
+    overview:'End-to-end data science & marketing decision framework analyzing retail transactions. Combines RFM K-Means clustering with Logistic Regression repeat purchase prediction (F1 = 0.670) and automated CLV / expected profit filtering.',
+    metrics:['£17.74M Analyzed Revenue','73.7% in 20.2% VIP','77 Negatives Excluded','12.1× Avg Expected ROI'],
+    kpis:[
+      {label:'Revenue Analyzed', value:'£17.74M', sub:'805,549 txns'},
+      {label:'VIP Concentration', value:'73.7%', sub:'20.2% customers'},
+      {label:'Model', value:'F1 0.670', sub:'Logistic Regression'},
+      {label:'Budget Saved', value:'77 excluded', sub:'negative profit'}
+    ],
+    slides: 23,
+    basePath:'assets/projects/analytics-engine',
+    sections:[
+      {title:'Executive Summary & Pareto', text:'73.7% of revenue from 20.2% VIP. Engine prioritizes high-value cohorts and suppresses low-yield targeting — concentration becomes compounding ROI.'},
+      {title:'RFM + K-Means (k=4)', text:'VIP · Potential Loyalists · Recent Low-Spend · Lost. Each cluster maps to distinct creative, offer, and channel.'},
+      {title:'Repeat Prediction', text:'90-day window, Logistic Regression (F1 0.670). Times incentives and kills false positives.'},
+      {title:'Expected Profit Gate', text:'Send only if P(repeat) × margin − cost > 0. 77 contacts suppressed (1.46%).'}
+    ]
+  },
+  {
+    id:'lumen',
+    badge:'Brand Concept & Unit Economics (Fictional Concept)',
+    title:'L U M E N — High-Fashion Unit Economics & Strategy',
+    subtitle:'Modern Retro-Futurism, High-Flash Aesthetic & E-Commerce Merchandising.',
+    thumb:'assets/projects/lumen/slide-1.jpg',
+    originalFile:'assets/projects/lumen/LUMEN-Moodboard.pdf',
+    overview:'Concept development, merchandising architecture, and financial unit economics for an avant-garde fashion brand. Blends high-flash imagery and metallic Inox/croc textures with strict margin planning.',
+    metrics:['Leather Coat 70%','Inox Bag 75%','Accent Pants 78%','Target ROAS 3.5×+'],
+    kpis:[
+      {label:'Leather Coat', value:'70% margin', sub:'Hero'},
+      {label:'Inox Bag', value:'75% margin', sub:'Halo'},
+      {label:'Accent Pants', value:'78% margin', sub:'Accent'},
+      {label:'ROAS Target', value:'3.5×+', sub:'Profit-gated'}
+    ],
+    slides: 2,
+    basePath:'assets/projects/lumen',
+    sections:[
+      {title:'Aesthetic System', text:'High-flash photography, cold Inox reflections, raw croc/leather — material cues price before price tag does.'},
+      {title:'Merchandising Architecture', text:'Assortment built by margin contribution, not trend alone. Hero / halo / accent hierarchy.'},
+      {title:'UrbanHub Targeting', text:'Ages 22–35, cultural hubs where retro-futurism is identity.'}
+    ]
+  },
+  {
+    id:'greenvibes',
+    badge:'Brand Concept & Content Funnel (Fictional Concept)',
+    title:'GreenVibes — Sustainable Content Strategy',
+    subtitle:'Data-Driven Content Strategy for Growth, Brand Authority & Audience Trust.',
+    thumb:'assets/projects/greenvibes/slide-1.jpg',
+    originalFile:'assets/projects/greenvibes/GreenVibes-Strategy.pdf',
+    overview:'360° content strategy for a vegan e-commerce brand. Structured across 3 pillars: Educational Lifestyle (40%), Eco-Ethics (30%), and Product & Social Proof (30%) with full weekly editorial and newsletter roadmap.',
+    metrics:['+40% Organic Traffic','>2.5 min Time-on-Page','+15% Content Conversions','40/30/30 Pillars'],
+    kpis:[
+      {label:'Organic Traffic', value:'+40%', sub:'6 months'},
+      {label:'Engagement', value:'>2.5 min', sub:'time on page'},
+      {label:'Conversions', value:'+15%', sub:'content-driven'},
+      {label:'Pillars', value:'40/30/30', sub:'Edu / Ethics / Proof'}
+    ],
+    slides: 7,
+    basePath:'assets/projects/greenvibes',
+    sections:[
+      {title:'Personas', text:'Plant-based Enthusiasts · Eco-Conscious Shoppers · Health & Wellness Seekers. One voice, three doors.'},
+      {title:'Pillars 40/30/30', text:'Educational 40% · Eco-Ethics 30% · Product & Social Proof 30%. Every asset has a KPI.'},
+      {title:'Roadmap', text:'SEO Hub 2×/week → Reels/TikTok 4× → Email 1× → Pinterest/Community. One shoot, four surfaces.'}
+    ]
+  },
+  {
+    id:'just-cavalli',
+    badge:'Speculative Strategy & Creative Direction (Speculative Brand Strategy Proposal)',
+    title:'JUST CAVALLI — THE ARCHIVE REBIRTH',
+    subtitle:'Creative Strategy & Visual Identity Shift',
+    thumb:'assets/projects/just-cavalli/slide-3.jpg',
+    originalFile:'assets/projects/just-cavalli/JustCavalli-ArchivalRebirth.pptx',
+    video:'assets/projects/just-cavalli/concept-video.mp4',
+    videoTitle:'Old Skin. New Narrative.',
+    videoSlide:5,
+    overview:'Capitalizing on the resurgence of archive fashion: reclaiming Roberto Cavalli’s late-’90s / early-2000s iconography — expressive prints, tailored leather, bold glamour — through a curated “Archive Re-issue” recontextualized through a modern dystopian-tech visual lens.',
+    metrics:['Heritage Re-issue','Vintage Boom','Cyber Vaults'],
+    kpis:[
+      {label:'Strategic Focus', value:'Archive Re-issue', sub:'Reclaim the narrative'},
+      {label:'Cultural Wave', value:'Vintage Boom', sub:'Gen Z & collectors'},
+      {label:'Visual System', value:'Techno-Futurism', sub:'Electric glow × cyber shadows'},
+      {label:'Execution', value:'3 Phases', sub:'Vault · Editorial · Pop-ups'}
+    ],
+    slides: 6,
+    basePath:'assets/projects/just-cavalli',
+    sections:[
+      {title:'The Strategic Opportunity', text:'Heritage & Legacy (iconic brand DNA from the late ’90s/2000s), The Vintage Boom (Gen Z + collectors driving secondary-market demand), and The Strategic Gap — the cultural moment is happening outside the brand, so reclaim it as a curated Archive Re-issue.'},
+      {title:'Visual Direction & Aesthetic Shift', text:'Techno-futuristic lighting with electric glow and cyber shadows, organic reptilian textures against cold stainless steel, and a dystopian palette — Deep Electric Blue (cyber highlight), Brushed Chrome (metallic base), Charcoal Black (shadows).'},
+      {title:'Campaign Execution', text:'The Interactive Vault — a 3D e-commerce landing page in cold industrial environments with electric-blue lighting; a social & editorial narrative of direct-flash portraits and cyber-glimmer video snippets; and immersive Pop-up Cyber Vaults built from brushed chrome and neon glow in key cities.'},
+      {title:'Concept Film — Old Skin. New Narrative.', text:'An AI-generated hero concept film, embedded as Slide 5: reptilian heritage surfaces dissolve into brushed chrome and electric blue — the archive literally shedding its skin in a dystopian-tech frame.'}
+    ]
+  }
+];
+
+const LS_KEY='mp_minimal_v3';
+let state = loadState();
+let activeProject=null, activeSlide=0, editEnabled=!!state.editEnabled, inlineKey=null;
+
+function loadState(){
+  try{
+    const raw=localStorage.getItem(LS_KEY);
+    if(!raw) return {edits:{}, customImages:{}, pathOverrides:{}, editEnabled:false};
+    return JSON.parse(raw);
+  }catch{ return {edits:{}, customImages:{}, pathOverrides:{}, editEnabled:false} }
+}
+function saveState(){ localStorage.setItem(LS_KEY, JSON.stringify(state)); }
+
+function getSlides(project){
+  const base = state.pathOverrides[project.id] || project.basePath;
+  const count = project.slides;
+  const list=[];
+  for(let i=1;i<=count;i++){
+    list.push(`${base}/slide-${i}.jpg`);
+  }
+  // append custom uploaded data urls
+  const customs = state.customImages[project.id] || [];
+  customs.forEach(c=>list.push(c));
+  return list;
+}
+
+function renderGrid(){
+  const grid=document.getElementById('workGrid');
+  grid.innerHTML='';
+  PROJECTS.forEach((p,idx)=>{
+    const thumb = p.thumb;
+    const dark = true;
+    const hasVideo = !!p.video;
+    const el=document.createElement('article');
+    el.className = 'card dark' + (hasVideo ? ' featured' : '');
+    el.onclick=()=>openModal(p.id);
+    el.innerHTML=`
+      <div class="card-thumb">
+        ${hasVideo ? `<video src="${p.video}" poster="${thumb}" autoplay muted loop playsinline preload="metadata"></video>` : `<img src="${thumb}" alt="${p.title}" loading="lazy">`}
+        <span class="card-badge ${idx===1?'burg':''}">${p.badge}</span>
+        ${hasVideo ? `<span class="video-tag">${esc(p.videoTitle||'Concept Video')}</span>` : ``}
+        <span class="card-arrow">↗</span>
+      </div>
+      <div class="card-body">
+        <h3>${esc(p.title)}</h3>
+        <div class="subtitle">${esc(p.subtitle)}</div>
+        <div class="card-overview">${esc(p.overview)}</div>
+        <div class="card-metrics">${p.metrics.map((m,i)=>`<span class="mini-pill ${i===0?'burg':''}">${esc(m)}</span>`).join('')}</div>
+        <div class="card-foot"><span>0${idx+1} — ${p.slides} slides</span><b>View Slides →</b></div>
+      </div>
+    `;
+    grid.appendChild(el);
+  });
+}
+
+function openModal(id){
+  const p=PROJECTS.find(x=>x.id===id);
+  if(!p) return;
+  activeProject=p; activeSlide=0;
+  const slides=getSlides(p);
+  const vi=p.video ? (p.videoSlide||1)-1 : -1;
+  const panel=document.getElementById('modalPanel');
+  panel.innerHTML=`
+    <div class="modal-top">
+      <div>
+        <div class="kicker" style="margin:0">${p.badge}</div>
+        <h3>${esc(p.title)}</h3>
+      </div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="slider">
+      <div class="slide-stage" id="slideStage">
+        <img id="slideImg" src="${slides[0]}" alt="Slide 1">
+        ${p.video ? `<video id="slideVideo" src="${p.video}" poster="${slides[vi]}" preload="none" style="display:none" controls autoplay muted loop playsinline></video>` : ``}
+        <span class="slide-counter" id="slideCounter">1 / ${slides.length}</span>
+      </div>
+      <button class="arrow prev" onclick="prevSlide()" aria-label="Previous">‹</button>
+      <button class="arrow next" onclick="nextSlide()" aria-label="Next">›</button>
+      <div class="thumbs" id="thumbs">${slides.map((s,i)=> i===vi
+        ? `<div class="thumb-video" data-i="${i}"><span class="thumb-play">▶</span><img src="${s}" data-i="${i}" onclick="goSlide(${i})" class="video-thumb${i===0?' active':''}"></div>`
+        : `<img src="${s}" data-i="${i}" onclick="goSlide(${i})" class="${i===0?'active':''}">`).join('')}</div>
+    </div>
+    <div class="modal-body">
+      <p style="color:var(--muted);font-size:13px;line-height:1.7;font-style:italic">${esc(p.subtitle)}</p>
+      <p style="margin-top:10px;font-size:13px;line-height:1.7">${esc(p.overview)}</p>
+      <div class="kpi-row">${p.kpis.map(k=>`<div class="kpi"><label>${esc(k.label)}</label><strong>${esc(k.value)}</strong><span>${esc(k.sub)}</span></div>`).join('')}</div>
+      <div class="meta-row">${p.metrics.map(m=>`<span class="mini-pill">${esc(m)}</span>`).join('')}</div>
+      <div class="modal-grid">${p.sections.map(s=>`<div class="modal-card"><h4>${esc(s.title)}</h4><p>${esc(s.text)}</p></div>`).join('')}</div>
+      <div class="path-note">
+        Gallery reads from <code>${(state.pathOverrides[p.id]||p.basePath)}/slide-1.jpg</code> → <code>slide-${p.slides}.jpg</code> — ${p.slides} πραγματικά slides από τα αρχεία σου.${p.video?` Slide ${p.videoSlide} είναι το concept video (poster = slide-${p.videoSlide}.jpg).`:``}<br>
+        ${p.originalFile ? `<a href="${p.originalFile}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;margin-top:8px;padding:7px 12px;border-radius:999px;background:var(--midnight);color:#fff;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;text-decoration:none">⬇ Download Original — ${p.originalFile.split('/').pop()}</a>` : ``}
+        <span style="margin-left:8px">Use Live Edit to change the path.</span>
+      </div>
+    </div>
+  `;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+  updateSlide();
+}
+function updateSlide(){
+  if(!activeProject) return;
+  const slides=getSlides(activeProject);
+  const img=document.getElementById('slideImg');
+  const video=document.getElementById('slideVideo');
+  const counter=document.getElementById('slideCounter');
+  const thumbs=document.querySelectorAll('#thumbs img');
+  const vi=activeProject.video ? (activeProject.videoSlide||1)-1 : -1;
+  if(video){
+    if(activeSlide===vi){
+      video.style.display='block';
+      video.muted=true;
+      if(video.play) video.play();
+      if(img) img.style.display='none';
+    }else{
+      video.style.display='none';
+      if(video.pause) video.pause();
+      if(img){
+        img.style.display='block';
+        img.src=slides[activeSlide];
+        img.alt=`Slide ${activeSlide+1}`;
+      }
+    }
+  }else if(img){
+    img.src=slides[activeSlide];
+    img.alt=`Slide ${activeSlide+1}`;
+  }
+  if(counter) counter.textContent=`${activeSlide+1} / ${slides.length}`;
+  thumbs.forEach(t=>t.classList.toggle('active', parseInt(t.dataset.i,10)===activeSlide));
+}
+function nextSlide(){
+  if(!activeProject) return;
+  const n=getSlides(activeProject).length;
+  activeSlide=(activeSlide+1)%n; updateSlide();
+}
+function prevSlide(){
+  if(!activeProject) return;
+  const n=getSlides(activeProject).length;
+  activeSlide=(activeSlide-1+n)%n; updateSlide();
+}
+function goSlide(i){ activeSlide=i; updateSlide(); }
+function closeModal(){ document.getElementById('modal').classList.remove('open'); document.body.style.overflow=''; }
+
+// EDITABLE
+function applyEdits(){
+  document.querySelectorAll('[data-edit-key]').forEach(el=>{
+    const k=el.getAttribute('data-edit-key');
+    if(state.edits[k]!==undefined) el.innerHTML=state.edits[k];
+    if(!el.querySelector('.edit-badge')){
+      const b=document.createElement('span'); b.className='edit-badge'; b.textContent='edit';
+      el.appendChild(b);
+    }
+    el.classList.add('editable');
+    el.addEventListener('click', e=>{
+      if(!editEnabled) return;
+      e.preventDefault(); openInline(k, el);
+    });
+  });
+  document.body.classList.toggle('admin-mode', editEnabled);
+  document.getElementById('editToggle').classList.toggle('active', editEnabled);
+  document.getElementById('editToggle').textContent = editEnabled ? '✕ Exit Live Edit' : '◐ Live Edit';
+  if(editEnabled) document.getElementById('editPanel').classList.add('open');
+}
+function openInline(k, el){
+  inlineKey=k;
+  const clone=el.cloneNode(true); const badge=clone.querySelector('.edit-badge'); if(badge) badge.remove();
+  document.getElementById('inlineTextarea').value=clone.innerText.trim();
+  document.getElementById('inlineModal').classList.add('open');
+}
+function closeInline(){ document.getElementById('inlineModal').classList.remove('open'); inlineKey=null; }
+function saveInline(){
+  if(!inlineKey) return;
+  const val=document.getElementById('inlineTextarea').value.trim();
+  const html=esc(val).replace(/\n/g,'<br>');
+  state.edits[inlineKey]=html; saveState();
+  const el=document.querySelector(`[data-edit-key="${inlineKey}"]`);
+  if(el){ const badge=el.querySelector('.edit-badge'); el.innerHTML=html; if(badge) el.appendChild(badge); else { const b=document.createElement('span'); b.className='edit-badge'; b.textContent='edit'; el.appendChild(b);} }
+  closeInline();
+}
+function toggleEdit(){
+  editEnabled=!editEnabled; state.editEnabled=editEnabled; saveState();
+  document.body.classList.toggle('admin-mode', editEnabled);
+  document.getElementById('editToggle').classList.toggle('active', editEnabled);
+  document.getElementById('editToggle').textContent = editEnabled ? '✕ Exit Live Edit' : '◐ Live Edit';
+  document.getElementById('editPanel').classList.toggle('open', editEnabled);
+}
+function buildPathEditors(){
+  const wrap=document.getElementById('imagePathEditors');
+  wrap.innerHTML='';
+  PROJECTS.forEach(p=>{
+    const div=document.createElement('div');
+    div.innerHTML=`
+      <label>${p.title} — base path</label>
+      <input data-path="${p.id}" value="${escAttr(state.pathOverrides[p.id] || p.basePath)}" placeholder="assets/projects/${p.id}">
+      <div class="mono" style="font-size:10px;color:var(--muted);margin-top:4px">${p.slides} slides${p.video?` · video at slide ${p.videoSlide}`:''} → slide-1.jpg … slide-${p.slides}.jpg</div>
+    `;
+    wrap.appendChild(div);
+  });
+  wrap.querySelectorAll('input[data-path]').forEach(inp=>{
+    inp.addEventListener('change', ()=>{
+      const id=inp.getAttribute('data-path');
+      const v=inp.value.trim() || PROJECTS.find(x=>x.id===id).basePath;
+      state.pathOverrides[id]=v; saveState(); renderGrid();
+    });
+  });
+}
+function exportJSON(){
+  const blob=new Blob([JSON.stringify({edits:state.edits, pathOverrides:state.pathOverrides, customImages:state.customImages}, null, 2)], {type:'application/json'});
+  const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='mp-portfolio-minimal.json'; a.click(); URL.revokeObjectURL(url);
+}
+function resetEdits(){
+  if(!confirm('Reset all Live Edit changes?')) return;
+  localStorage.removeItem(LS_KEY);
+  state={edits:{}, customImages:{}, pathOverrides:{}, editEnabled:false};
+  editEnabled=false;
+  applyEdits(); buildPathEditors(); renderGrid();
+  document.getElementById('editPanel').classList.remove('open');
+}
+function handleUpload(){
+  const sel=document.getElementById('uploadProject').value;
+  const file=document.getElementById('uploadFile').files[0];
+  if(!file) return alert('Choose an image first');
+  const reader=new FileReader();
+  reader.onload=()=>{
+    state.customImages[sel]=state.customImages[sel]||[];
+    state.customImages[sel].push(reader.result);
+    saveState(); renderGrid();
+    if(activeProject && activeProject.id===sel) openModal(sel);
+    alert('Uploaded to '+sel);
+  };
+  reader.readAsDataURL(file);
+}
+function esc(s){ return String(s).replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function escAttr(s){ return esc(s).replace(/"/g,'&quot;'); }
+
+document.getElementById('hamburger').addEventListener('click', ()=>document.getElementById('nav').classList.toggle('open'));
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click', ()=>document.getElementById('nav').classList.remove('open')));
+document.addEventListener('keydown', e=>{
+  if(e.key==='Escape'){ closeModal(); closeInline(); }
+  if(document.getElementById('modal').classList.contains('open')){
+    if(e.key==='ArrowRight') nextSlide();
+    if(e.key==='ArrowLeft') prevSlide();
+  }
+});
+
+applyEdits();
+buildPathEditors();
+renderGrid();
+</script>
+</body>
+</html>
